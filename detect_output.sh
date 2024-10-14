@@ -2,6 +2,14 @@
 
 # Display different wallpapers for each monitor
 
+if xrandr | grep 'DisplayPort-9 connected'; then
+	sh ~/.screenlayout/work.sh
+elif xrandr | grep 'DisplayPort-11 connected'; then
+	sh ~/.screenlayout/work2.sh
+else
+	sh ~/.screenlayout/default.sh
+fi
+
 cmd='xwallpaper '
 if xrandr --listactivemonitors
 then
